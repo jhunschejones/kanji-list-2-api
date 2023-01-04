@@ -1,17 +1,12 @@
-class KanjisController < ApplicationController
-  authorizer "main#cognito" # protects all actions in the controller
-  before_action :set_kanji, only: [:show, :update, :delete]
+class KanjiController < ApplicationController
+  # authorizer "main#cognito" # protects all actions in the controller
+  before_action :set_kanji, only: [:update, :delete]
 
   # GET /kanjis
   def index
     @kanjis = Kanji.all
 
     render json: @kanjis
-  end
-
-  # GET /kanjis/1
-  def show
-    render json: @kanji
   end
 
   # POST /kanjis
