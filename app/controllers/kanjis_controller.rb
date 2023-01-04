@@ -1,4 +1,5 @@
 class KanjisController < ApplicationController
+  authorizer "main#cognito" # protects all actions in the controller
   before_action :set_kanji, only: [:show, :update, :delete]
 
   # GET /kanjis
